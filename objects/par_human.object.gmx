@@ -32,8 +32,23 @@ health_timer=room_speed*4;
 comp_met=false;
 dev_timer=0;
 dev_met=false;
+need=0;
+
+food_timer_add= room_speed*10;
+sleep_timer_add= room_speed*20;
 
 path_computer = path_add();
+
+//Create attached need objects
+need_food=instance_create(x,y,par_needs);
+need_food.value= 5;
+need_food.increment= room_speed*5;
+need_sleep=instance_create(x,y,par_needs);
+need_sleep.value= 10;
+need_sleep.increment= room_speed*8;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -58,9 +73,8 @@ path_computer = path_add();
             <kind>1</kind>
             <string>//random movement
 randomize();
-health_timer-=1;
 dev_timer-=1;
-if (hp&gt;=3 and (!comp_met and !dev_met)){
+if (need_food.value&gt;=3 and (!comp_met and !dev_met)){
     if move_timer=0{
         x_random=irandom_range(608,960);
         y_random=irandom_range(800,1600);
@@ -86,10 +100,7 @@ else if (!dev_met){
         draw_path(path_device, x, y, true);
     }
 }
-if health_timer&lt;=0 {
-    hp-=1;
-    health_timer=room_speed*4;
-}
+
 if (!comp_met){
     if place_meeting(x,y,obj_computer){
         comp_met=true;
@@ -102,9 +113,9 @@ if (!dev_met){
     }
 }
 if (dev_met){
-    if (hp&lt;=5){
+    if (need_food.value&lt;=5){
         if (dev_timer&lt;=0){
-            hp+=1;
+            need_food.value+=1;
             dev_timer=room_speed;
         }        
     }
@@ -113,6 +124,30 @@ if (dev_met){
     }
 }
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(16,48, "Need Food Value: " + string(need_food.value));
 </string>
           </argument>
         </arguments>

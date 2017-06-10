@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>is_sabotaged=false;
 sabo_timer=room_speed*2;
+image_speed=0;
 </string>
           </argument>
         </arguments>
@@ -60,18 +61,18 @@ if sabo_click and place_meeting(x,y,obj_cursor){
 
 if sabo_timer&lt;=0{
     is_sabotaged=true;
-    image_blend=c_gray;
-    sabo_timer = room_speed*2;
+    image_index=1;
+    sabo_timer=room_speed*2;
 }
 
 //if sabotage is set, kill the human that first touches it
-if is_sabotaged {
-    if human {
+if is_sabotaged{
+    if human{
         with human{
             instance_destroy();
         }
         is_sabotaged=false;
-        image_blend=c_black;
+        image_index=0;
     }
 }
 </string>
@@ -97,6 +98,7 @@ if is_sabotaged {
           <argument>
             <kind>1</kind>
             <string>draw_text(16,32, "Sabo Timer: " + string(sabo_timer));
+
 </string>
           </argument>
         </arguments>

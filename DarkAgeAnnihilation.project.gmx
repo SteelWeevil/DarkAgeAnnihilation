@@ -15,11 +15,11 @@
       <sprite>sprites\spr_wall_lr</sprite>
       <sprite>sprites\spr_wall_ud</sprite>
     </sprites>
+    <sprite>sprites\spr_need</sprite>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths">
-    <path>paths\path0</path>
-  </paths>
+  <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\par_human</object>
     <object>objects\par_device</object>
@@ -30,6 +30,9 @@
       <object>objects\obj_wall_lr</object>
     </objects>
     <object>objects\obj_cursor</object>
+    <objects name="Need Objects">
+      <object>objects\par_needs</object>
+    </objects>
     <object>objects\obj_grid_controller</object>
   </objects>
   <rooms name="rooms">
