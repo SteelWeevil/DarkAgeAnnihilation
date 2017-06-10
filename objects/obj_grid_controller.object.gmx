@@ -28,7 +28,7 @@
             <string>globalvar grid;
 grid_size = 32;
 grid = mp_grid_create(0, 0, room_width/grid_size, room_height/grid_size, grid_size, grid_size);
-mp_grid_add_instances(grid,obj_wall,false);
+mp_grid_add_instances(grid,par_wall,false);
 
 </string>
           </argument>

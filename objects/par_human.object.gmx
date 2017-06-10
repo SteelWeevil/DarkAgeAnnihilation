@@ -30,7 +30,6 @@ spd=3;
 move_timer=room_speed*4;
 health_timer=room_speed*4;
 comp_met=false;
-mp_grid_add_instances(grid,obj_wall,false);
 
 path_computer = path_add();
 </string>

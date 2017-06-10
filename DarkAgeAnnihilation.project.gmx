@@ -9,10 +9,12 @@
     <sprite>sprites\spr_human</sprite>
     <sprite>sprites\spr_computer</sprite>
     <sprite>sprites\spr_device</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_wall_ud</sprite>
-    <sprite>sprites\spr_wall_lr</sprite>
     <sprite>sprites\spr_cursor</sprite>
+    <sprites name="Wall Sprites">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_lr</sprite>
+      <sprite>sprites\spr_wall_ud</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
