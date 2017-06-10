@@ -16,13 +16,17 @@
       <sprite>sprites\spr_wall_ud</sprite>
     </sprites>
     <sprite>sprites\spr_need</sprite>
+    <sprite>sprites\spr_device_food</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\par_human</object>
-    <object>objects\par_device</object>
+    <objects name="Device Objects">
+      <object>objects\par_device</object>
+      <object>objects\obj_device_food</object>
+    </objects>
     <object>objects\obj_computer</object>
     <objects name="Wall Objects">
       <object>objects\par_wall</object>

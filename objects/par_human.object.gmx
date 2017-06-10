@@ -74,6 +74,7 @@ need_sleep.increment= room_speed*8;
             <string>//random movement
 randomize();
 dev_timer-=1;
+
 if (need_food.value&gt;=3 and (!comp_met and !dev_met)){
     if move_timer=0{
         x_random=irandom_range(608,960);
@@ -95,7 +96,7 @@ else if (!comp_met and !dev_met){
 }
 else if (!dev_met){
     path_device=path_add();
-    if mp_grid_path(grid,path_device,x,y,par_device.x,par_device.y,1) {
+    if mp_grid_path(grid,path_device,x,y,obj_device_food.x,obj_device_food.y,1) {
         path_start(path_device,spd,path_action_stop,true);
         draw_path(path_device, x, y, true);
     }
