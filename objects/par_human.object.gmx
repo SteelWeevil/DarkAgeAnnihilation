@@ -30,7 +30,9 @@ spd=3;
 move_timer=room_speed*4;
 health_timer=room_speed*4;
 comp_met=false;
-mp_grid_add_instances(grid,obj_wall,false);
+//mp_grid_add_instances(grid,obj_wall,false);
+dev_timer=0;
+dev_met=false;
 
 path_computer = path_add();
 </string>
@@ -57,7 +59,9 @@ path_computer = path_add();
             <kind>1</kind>
             <string>//random movement
 randomize();
-if (hp&gt;=3 and !comp_met){
+health_timer-=1;
+dev_timer-=1;
+if (hp&gt;=3 and (!comp_met and !dev_met)){
     if move_timer=0{
         hspeed=irandom_range(-1,1)*spd;
         vspeed=irandom_range(-1,1)*spd;
@@ -65,27 +69,46 @@ if (hp&gt;=3 and !comp_met){
     }
     move_timer-=1;
 } 
-else if (!comp_met){
+else if (!comp_met and !dev_met){
     path_computer=path_add();
     if mp_grid_path(grid,path_computer,x,y,obj_computer.x,obj_computer.y,1){
         path_start(path_computer,spd,path_action_stop,true);
     }
 }
-else{
+else if (!dev_met){
     path_device=path_add();
     if mp_grid_path(grid,path_device,x,y,obj_device.x,obj_device.y,1) {
         path_start(path_device,spd,path_action_stop,true);
         draw_path(path_device, x, y, true);
     }
 }
-if health_timer=0 {
+if health_timer&lt;=0 {
     hp-=1;
     health_timer=room_speed*4;
 }
-health_timer-=1;
-if place_meeting(x,y,obj_computer){
-    comp_met=true;
+if (!comp_met){
+    if place_meeting(x,y,obj_computer){
+        comp_met=true;
+    }
 }
+if (!dev_met){
+    if place_meeting(x,y,obj_device){
+        dev_met=true;
+        comp_met=false;
+    }
+}
+if (dev_met){
+    if (hp&lt;=5){
+        if (dev_timer&lt;=0){
+            hp+=1;
+            dev_timer=room_speed;
+        }        
+    }
+    else{
+        dev_met=false;
+    }
+}
+
 </string>
           </argument>
         </arguments>
