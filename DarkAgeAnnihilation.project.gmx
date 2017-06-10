@@ -20,8 +20,8 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
+    <object>objects\par_needs</object>
     <object>objects\par_human</object>
     <objects name="Device Objects">
       <object>objects\par_device</object>
@@ -34,9 +34,6 @@
       <object>objects\obj_wall_lr</object>
     </objects>
     <object>objects\obj_cursor</object>
-    <objects name="Need Objects">
-      <object>objects\par_needs</object>
-    </objects>
     <object>objects\obj_grid_controller</object>
   </objects>
   <rooms name="rooms">
