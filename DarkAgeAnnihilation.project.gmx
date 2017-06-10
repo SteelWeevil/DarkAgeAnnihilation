@@ -17,10 +17,12 @@
     </sprites>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <objects name="objects">
     <object>objects\par_human</object>
-    <object>objects\obj_device</object>
+    <object>objects\par_device</object>
     <object>objects\obj_computer</object>
     <objects name="Wall Objects">
       <object>objects\par_wall</object>
@@ -31,8 +33,8 @@
     <object>objects\obj_grid_controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\room0</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

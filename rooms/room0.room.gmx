@@ -53,8 +53,8 @@
   <instances>
     <instance objName="obj_grid_controller" x="0" y="0" name="inst_FFD118DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_computer" x="864" y="768" name="inst_C0B00776" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_device" x="576" y="1504" name="inst_CBE74794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cursor" x="32" y="0" name="inst_E56A4948" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="par_device" x="576" y="1504" name="inst_CBE74794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cursor" x="1056" y="1152" name="inst_E56A4948" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="par_human" x="896" y="1120" name="inst_C24FD8F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_ud" x="224" y="1184" name="inst_06CE3651" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_ud" x="224" y="1280" name="inst_94895589" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
