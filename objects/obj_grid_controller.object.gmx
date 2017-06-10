@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>globalvar grid;
-grid = mp_grid_create(0, 0, room_width/16, room_height/16, 16, 16);
-mp_grid_add_instances(grid,obj_wall,false);
+grid_size = 32;
+grid = mp_grid_create(0, 0, room_width/grid_size, room_height/grid_size, grid_size, grid_size);
+mp_grid_add_instances(grid,par_wall,false);
 
 </string>
           </argument>
@@ -96,10 +97,11 @@ draw_set_alpha(.2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mp_grid_path(grid,par_human.path_computer,x,y,obj_computer.x,obj_computer.y,1){
-    draw_path(par_human.path_computer,x,y,true);
+            <string>if instance_exists(par_human) {
+    if mp_grid_path(grid,par_human.path_computer,x,y,obj_computer.x,obj_computer.y,1){
+        draw_path(par_human.path_computer,x,y,true);
+    }
 }
-
 </string>
           </argument>
         </arguments>
