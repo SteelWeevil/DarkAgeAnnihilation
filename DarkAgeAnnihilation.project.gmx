@@ -10,6 +10,8 @@
     <sprite>sprites\spr_computer</sprite>
     <sprite>sprites\spr_device</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_wall_ud</sprite>
+    <sprite>sprites\spr_wall_lr</sprite>
     <sprite>sprites\spr_cursor</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -18,7 +20,11 @@
     <object>objects\par_human</object>
     <object>objects\obj_device</object>
     <object>objects\obj_computer</object>
-    <object>objects\obj_wall</object>
+    <objects name="Wall Objects">
+      <object>objects\par_wall</object>
+      <object>objects\obj_wall_ud</object>
+      <object>objects\obj_wall_lr</object>
+    </objects>
     <object>objects\obj_cursor</object>
     <object>objects\obj_grid_controller</object>
   </objects>
