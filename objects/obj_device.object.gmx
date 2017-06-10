@@ -29,9 +29,11 @@
 death_click=mouse_check_button_pressed(mb_left);
 
 //death mechanic
-if death_click and place_meeting(x,y,obj_human){
-    with(obj_human){
-        instance_destroy();
+if death_click and place_meeting(x,y,obj_cursor){
+    if place_meeting(x,y,par_human){
+        with(par_human){
+            instance_destroy();
+        }
     }
 }
 </string>

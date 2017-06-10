@@ -10,17 +10,17 @@
     <sprite>sprites\spr_computer</sprite>
     <sprite>sprites\spr_device</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_cursor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <script>scripts\scr_moverandom.gml</script>
-  </scripts>
   <objects name="objects">
-    <object>objects\obj_human</object>
+    <object>objects\par_human</object>
     <object>objects\obj_device</object>
     <object>objects\obj_computer</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_cursor</object>
+    <object>objects\obj_grid_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
