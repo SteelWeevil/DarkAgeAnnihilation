@@ -74,13 +74,11 @@ else if (sabo_timer &lt; room_speed*2){
 if sabo_timer&lt;=0{
     if(global.processing &gt;=sabotage_cost and !is_sabotaged){
         is_sabotaged=true;
-        image_index=1;
         sabo_timer=room_speed*2;
         global.processing -= sabotage_cost;
     }
     else {
         is_sabotaged=false;
-        image_index=0;
         sabo_timer=room_speed*2;
     }
 }
@@ -93,11 +91,9 @@ if is_sabotaged{
             instance_destroy();
         }
         is_sabotaged=false;
-        image_index=0;
     }
     if(global.processing&lt;1){
         is_sabotaged = false;
-        image_index=0;
     }
     else if(proc_timer&lt;=0){
         global.processing -=1;
@@ -118,11 +114,18 @@ if instance_place(x,y, par_human) {
 
 if (random(3600)&lt;=1){
     is_broken = true;
-    image_index=2;
 }
 
-
-
+//Check the Sprite For Device Condition
+if is_sabotaged {
+    image_index = 1;
+}
+else if is_broken {
+    image_index = 2
+}
+else {
+    image_index = 0;
+}
 </string>
           </argument>
         </arguments>
