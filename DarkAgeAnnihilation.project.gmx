@@ -19,6 +19,7 @@
     </sprites>
     <sprite>sprites\spr_need</sprite>
     <sprite>sprites\spr_device_food</sprite>
+    <sprite>sprites\spr_device_sleep</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -28,6 +29,7 @@
     <objects name="Device Objects">
       <object>objects\par_device</object>
       <object>objects\obj_device_food</object>
+      <object>objects\obj_device_sleep</object>
     </objects>
     <object>objects\obj_computer</object>
     <objects name="Wall Objects">

@@ -138,6 +138,9 @@
     <instance objName="par_wall" x="1792" y="1024" name="inst_2B6D2E99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="par_wall" x="1792" y="1536" name="inst_14D4E4BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_device_food" x="576" y="1056" name="inst_79D53A8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_device_sleep" x="1280" y="832" name="inst_4D35C983" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_device_sleep" x="576" y="1440" name="inst_22B8B46E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_device_food" x="1664" y="1088" name="inst_C1EBA143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_lr" x="736" y="1376" name="inst_E312100D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_lr" x="736" y="1184" name="inst_F3D8A1BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_lr" x="1376" y="1152" name="inst_0694BF13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
