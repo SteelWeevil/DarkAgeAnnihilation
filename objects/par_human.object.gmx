@@ -90,7 +90,7 @@ if(focus="none"){
 if(focus = "food"){
     //get food
     path_device=path_add();
-    nearest_device=instance_nearest(x,y,obj_device_food);
+    nearest_device=scr_not_broken_nearest(x,y,obj_device_food);
     if mp_grid_path(grid,path_device,x,y,nearest_device.x,nearest_device.y,1) {
         path_assign(my_path, path_device);
         path_delete(path_device);
@@ -111,7 +111,7 @@ if(focus = "food"){
 if(focus = "sleep"){
     //get food
     path_device=path_add();
-    nearest_device=instance_nearest(x,y,obj_device_sleep);
+    nearest_device=scr_not_broken_nearest(x,y,obj_device_sleep);
     if mp_grid_path(grid,path_device,x,y,nearest_device.x,nearest_device.y,1) {
         path_assign(my_path, path_device);
         path_delete(path_device);

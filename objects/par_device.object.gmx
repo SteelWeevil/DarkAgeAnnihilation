@@ -33,7 +33,8 @@ energy_interval = room_speed;
 proc_timer = room_speed;
 proc_interval = room_speed;
 sabotage_cost=10;
-
+is_broken=false;
+known_broken_device=false;
 </string>
           </argument>
         </arguments>
@@ -109,7 +110,18 @@ if instance_place(x,y, par_human) {
         global.energy -= 1;
         energy_timer = energy_interval;
     }
+    if is_broken {
+        known_broken_device = true;
+    }
 }
+
+if (random(3600)&lt;=1){
+    is_broken = true;
+    image_index=2;
+}
+
+
+
 </string>
           </argument>
         </arguments>
