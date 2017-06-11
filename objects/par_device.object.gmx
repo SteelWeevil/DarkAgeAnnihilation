@@ -111,7 +111,7 @@ if human {
     if is_broken {
         if !known_broken_device {
             known_broken_device = true;
-            human.paranoia += 20;
+            human.paranoia += 10;
         }
         
     }

@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>is_following = false;
 dead_found_already = false;
+
+para_timer = room_speed * 2 + irandom(room_speed);
+para_interval = room_speed * 2;
 </string>
           </argument>
         </arguments>
@@ -51,13 +54,20 @@ dead_found_already = false;
             <kind>1</kind>
             <string>follow_human = instance_place(x, y, par_human);
 
-if follow_human and !is_following{
-    is_following = true;
+if follow_human and is_following{
     x = follow_human.x-16;
     y = follow_human.y-16;
 }
 
+player_found = instance_place(x,y,par_human)
 
+if player_found{
+    para_timer -= 1;
+    if para_timer &lt;= 0 {
+        player_found.paranoia +=1;
+        para_timer = para_interval;
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -196,11 +196,13 @@ else if happiness &gt; 6{
 human_dead = scr_nearest_dead(x,y,obj_human_dead);
 
 if human_dead {
-    if distance_to_object(human_dead) &lt; 100 {
+    if instance_place(x,y, human_dead){
         human_dead.dead_found_already = true;
         paranoia +=20;
     }
 }
+
+
 </string>
           </argument>
         </arguments>
