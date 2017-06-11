@@ -53,6 +53,7 @@ paranoia = 0;
 para_timer = room_speed * 4 + irandom(room_speed);
 para_interval = room_speed * 4;
 
+
 name_list = ds_list_create();
 ds_list_add(name_list, "Bob");
 ds_list_add(name_list, "Jeff");
@@ -65,6 +66,7 @@ ds_list_add(name_list, "Julie");
 ds_list_add(name_list, "Jenni");
 
 human_name = name_list[|irandom_range(0,9)]
+
 
 
 
@@ -190,6 +192,15 @@ else if happiness &gt; 6{
     }
 }
 
+//If a body is found
+human_dead = scr_nearest_dead(x,y,obj_human_dead);
+
+if human_dead {
+    if distance_to_object(human_dead) &lt; 100 {
+        human_dead.dead_found_already = true;
+        paranoia +=20;
+    }
+}
 </string>
           </argument>
         </arguments>

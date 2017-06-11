@@ -102,13 +102,18 @@ if is_sabotaged{
     proc_timer -= 1;
 }
 
-if instance_place(x,y, par_human) {
+//Consume Energy When Using a Device
+if human {
     if energy_timer &lt;= 0 {
         global.energy -= 1;
         energy_timer = energy_interval;
     }
     if is_broken {
-        known_broken_device = true;
+        if !known_broken_device {
+            known_broken_device = true;
+            human.paranoia += 20;
+        }
+        
     }
 }
 

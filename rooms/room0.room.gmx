@@ -154,6 +154,8 @@
     <instance objName="par_wall" x="512" y="1216" name="inst_3FB10E4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="par_wall" x="512" y="1344" name="inst_3FBF1993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_energy_controller" x="0" y="32" name="inst_3732BD48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_human_dead" x="640" y="1056" name="inst_42803459" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="par_human" x="896" y="992" name="inst_AAF5E7D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

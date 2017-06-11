@@ -29,6 +29,7 @@
   <scripts name="scripts">
     <script>scripts\instance_nth_nearest.gml</script>
     <script>scripts\scr_not_broken_nearest.gml</script>
+    <script>scripts\scr_nearest_dead.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\par_needs</object>

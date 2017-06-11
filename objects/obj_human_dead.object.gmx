@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>is_following = false;
+dead_found_already = false;
 </string>
           </argument>
         </arguments>
