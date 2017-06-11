@@ -30,6 +30,11 @@ sabo_timer=room_speed*2;
 image_speed=0;
 energy_timer = room_speed;
 energy_interval = room_speed;
+proc_timer = room_speed;
+proc_interval = room_speed;
+sabotage_cost=10;
+is_broken=false;
+known_broken_device=false;
 </string>
           </argument>
         </arguments>
@@ -62,15 +67,22 @@ energy_timer-=1;
 if sabo_click and place_meeting(x,y,obj_cursor){
     sabo_timer-=1;
 }
-
-if (!sabo_click and sabo_timer &lt; room_speed*2) {
+else if (sabo_timer &lt; room_speed*2){
     sabo_timer=room_speed*2;
 }
 
 if sabo_timer&lt;=0{
-    is_sabotaged=true;
-    image_index=1;
-    sabo_timer=room_speed*2;
+    if(global.processing &gt;=sabotage_cost and !is_sabotaged){
+        is_sabotaged=true;
+        image_index=1;
+        sabo_timer=room_speed*2;
+        global.processing -= sabotage_cost;
+    }
+    else {
+        is_sabotaged=false;
+        image_index=0;
+        sabo_timer=room_speed*2;
+    }
 }
 
 //if sabotage is set, kill the human that first touches it
@@ -83,6 +95,15 @@ if is_sabotaged{
         is_sabotaged=false;
         image_index=0;
     }
+    if(global.processing&lt;1){
+        is_sabotaged = false;
+        image_index=0;
+    }
+    else if(proc_timer&lt;=0){
+        global.processing -=1;
+        proc_timer = proc_interval;
+    }
+    proc_timer -= 1;
 }
 
 if instance_place(x,y, par_human) {
@@ -90,7 +111,18 @@ if instance_place(x,y, par_human) {
         global.energy -= 1;
         energy_timer = energy_interval;
     }
+    if is_broken {
+        known_broken_device = true;
+    }
 }
+
+if (random(3600)&lt;=1){
+    is_broken = true;
+    image_index=2;
+}
+
+
+
 </string>
           </argument>
         </arguments>
