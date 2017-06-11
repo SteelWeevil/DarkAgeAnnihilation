@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_human</sprite>
+    <sprite>sprites\spr_human_dead</sprite>
     <sprite>sprites\spr_computer</sprite>
     <sprite>sprites\spr_device</sprite>
     <sprite>sprites\spr_cursor</sprite>
@@ -28,6 +29,7 @@
   <objects name="objects">
     <object>objects\par_needs</object>
     <object>objects\par_human</object>
+    <object>objects\obj_human_dead</object>
     <objects name="Device Objects">
       <object>objects\par_device</object>
       <object>objects\obj_device_food</object>
@@ -44,6 +46,7 @@
     <object>objects\par_door</object>
     <object>objects\obj_door_ud</object>
     <object>objects\obj_energy_controller</object>
+    <object>objects\obj_name_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

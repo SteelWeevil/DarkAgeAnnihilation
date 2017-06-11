@@ -39,6 +39,7 @@ nearest_device=noone;
 energy_timer = room_speed * 10;
 energy_interval = room_speed * 10;
 
+
 //Create attached need objects
 need_food=instance_create(x,y,par_needs);
 need_food.value= 4+irandom_range(1,6);
@@ -47,6 +48,20 @@ need_food.threshold=5;
 need_sleep=instance_create(x,y,par_needs);
 need_sleep.value= 6+irandom_range(1,4);
 need_sleep.increment= room_speed*7;
+
+
+name_list = ds_list_create();
+ds_list_add(name_list, "Bob");
+ds_list_add(name_list, "Jeff");
+ds_list_add(name_list, "Max");
+ds_list_add(name_list, "Greg");
+ds_list_add(name_list, "Steve");
+ds_list_add(name_list, "Sarah");
+ds_list_add(name_list, "Kim");
+ds_list_add(name_list, "Julie");
+ds_list_add(name_list, "Jenni");
+
+human_name = name_list[|irandom_range(0,9)]
 
 
 
@@ -170,6 +185,30 @@ if energy_timer &lt;= 0 {
             <kind>1</kind>
             <string>draw_text(16,48, "Need Food Value: " + string(need_food.value));
 draw_text(16,64, "Need Sleep Value: " + string(need_sleep.value));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite(spr_human, 0, x, y);
+draw_text(x, y-36, human_name);
 </string>
           </argument>
         </arguments>
