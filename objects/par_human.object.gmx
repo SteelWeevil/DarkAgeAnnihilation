@@ -47,7 +47,7 @@ need_food.threshold=5;
 need_sleep=instance_create(x,y,par_needs);
 need_sleep.value= 6+irandom_range(1,4);
 need_sleep.increment= room_speed*7;
-
+happiness = 5;
 
 
 
@@ -146,6 +146,10 @@ if energy_timer &lt;= 0 {
     energy -= 1;
     energy_timer = energy_interval;
 }
+
+//happiness calculation
+happiness= (need_food.value+need_sleep.value)/2;
+
 </string>
           </argument>
         </arguments>
