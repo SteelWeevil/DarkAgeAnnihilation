@@ -34,7 +34,6 @@ dev_timer=0;
 focus="none";
 device_is_reached=false;
 path_device=noone;
-path_random=noone;
 my_path = path_add();
 
 //Create attached need objects
@@ -105,14 +104,32 @@ if(focus = "food"){
    }    
 }
 
-if (focus = "none"){
-        x_random=1056;
-        y_random=1280;
-        path_random=path_add();
-        if mp_grid_path(grid,path_random,x,y,x_random,y_random,1){
-            path_assign(my_path, path_random);
-            path_delete(path_random);
+if(focus = "sleep"){
+    //get food
+    path_device=path_add();
+    if mp_grid_path(grid,path_device,x,y,obj_device_sleep.x,obj_device_sleep.y,1) {
+        path_assign(my_path, path_device);
+        path_delete(path_device);
+    }
+   if (instance_place(x,y,obj_device_sleep)){
+        if (dev_timer&lt;=0){
+            need_sleep.value+=1;
+            dev_timer=room_speed;
         }
+        if need_sleep.value &gt;=10{
+            need_sleep.value = 10;
+            need_sleep.is_needed=false;
+            focus = "none";
+        }    
+   }    
+}
+
+if (focus = "none"){
+    path_device=path_add();
+    if mp_grid_path(grid,path_device,x,y,obj_computer.x,obj_computer.y,1) {
+        path_assign(my_path, path_device);
+        path_delete(path_device);
+    }
 } 
 
 path_start(my_path,spd,path_action_stop,false);
