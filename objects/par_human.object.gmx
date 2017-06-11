@@ -43,12 +43,15 @@ energy_interval = room_speed * 10;
 //Create attached need objects
 need_food=instance_create(x,y,par_needs);
 need_food.value= 4+irandom_range(1,6);
-need_food.increment= room_speed*3;
+need_food.increment= room_speed * 3;
 need_food.threshold=5;
 need_sleep=instance_create(x,y,par_needs);
 need_sleep.value= 6+irandom_range(1,4);
-need_sleep.increment= room_speed*7;
+need_sleep.increment= room_speed * 7;
 happiness = 5;
+paranoia = 0;
+para_timer = room_speed * 4 + irandom(room_speed);
+para_interval = room_speed * 4;
 
 name_list = ds_list_create();
 ds_list_add(name_list, "Bob");
@@ -165,6 +168,28 @@ if energy_timer &lt;= 0 {
 //happiness calculation
 happiness= (need_food.value+need_sleep.value)/2;
 
+//Paranoia calculations
+if happiness &lt; 5 {
+    para_timer -= 1;
+    if para_timer &lt;= 0 {
+        paranoia +=1;
+        if paranoia &gt;= 100 {
+            paranoia = 100;
+        }
+        para_timer = para_interval;
+    }
+}
+else if happiness &gt; 6{
+    para_timer -= 1;
+    if para_timer &lt;= 0 {
+        paranoia -=1;
+        if paranoia &lt;= 0 {
+            paranoia = 0;
+        }
+        para_timer = para_interval;
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -189,6 +214,8 @@ happiness= (need_food.value+need_sleep.value)/2;
             <kind>1</kind>
             <string>draw_text(16,48, "Need Food Value: " + string(need_food.value));
 draw_text(16,64, "Need Sleep Value: " + string(need_sleep.value));
+draw_text(16,80, "Happiness: " + string(happiness));
+draw_text(16,96, "Paranoia: " + string(paranoia));
 </string>
           </argument>
         </arguments>

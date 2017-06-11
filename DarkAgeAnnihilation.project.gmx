@@ -50,7 +50,6 @@
     <object>objects\par_door</object>
     <object>objects\obj_door_ud</object>
     <object>objects\obj_energy_controller</object>
-    <object>objects\obj_name_list</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
