@@ -35,6 +35,7 @@ focus="none";
 device_is_reached=false;
 path_device=noone;
 my_path = path_add();
+nearest_device=noone;
 
 //Create attached need objects
 need_food=instance_create(x,y,par_needs);
@@ -87,7 +88,8 @@ if(focus="none"){
 if(focus = "food"){
     //get food
     path_device=path_add();
-    if mp_grid_path(grid,path_device,x,y,obj_device_food.x,obj_device_food.y,1) {
+    nearest_device=instance_nearest(x,y,obj_device_food);
+    if mp_grid_path(grid,path_device,x,y,nearest_device.x,nearest_device.y,1) {
         path_assign(my_path, path_device);
         path_delete(path_device);
     }
@@ -107,7 +109,8 @@ if(focus = "food"){
 if(focus = "sleep"){
     //get food
     path_device=path_add();
-    if mp_grid_path(grid,path_device,x,y,obj_device_sleep.x,obj_device_sleep.y,1) {
+    nearest_device=instance_nearest(x,y,obj_device_sleep);
+    if mp_grid_path(grid,path_device,x,y,nearest_device.x,nearest_device.y,1) {
         path_assign(my_path, path_device);
         path_delete(path_device);
     }
@@ -179,7 +182,8 @@ if (!comp_met){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(16,self.y, "Need Food Value: " + string(need_food.value));
+            <string>draw_text(16,48, "Need Food Value: " + string(need_food.value));
+draw_text(16,64, "Need Sleep Value: " + string(need_sleep.value));
 </string>
           </argument>
         </arguments>

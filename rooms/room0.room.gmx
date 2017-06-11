@@ -139,6 +139,8 @@
     <instance objName="par_wall" x="1792" y="1536" name="inst_14D4E4BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_device_food" x="576" y="1056" name="inst_79D53A8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_device_sleep" x="1280" y="832" name="inst_4D35C983" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_device_sleep" x="576" y="1440" name="inst_22B8B46E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_device_food" x="1664" y="1088" name="inst_C1EBA143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
