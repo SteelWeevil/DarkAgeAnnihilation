@@ -32,6 +32,8 @@ energy_timer = room_speed;
 energy_interval = room_speed;
 proc_timer = room_speed;
 proc_interval = room_speed;
+sabotage_cost=10;
+
 </string>
           </argument>
         </arguments>
@@ -69,11 +71,16 @@ else if (sabo_timer &lt; room_speed*2){
 }
 
 if sabo_timer&lt;=0{
-    if(global.processing &gt;=5){
+    if(global.processing &gt;=sabotage_cost and !is_sabotaged){
         is_sabotaged=true;
         image_index=1;
         sabo_timer=room_speed*2;
-        global.processing -= 5;
+        global.processing -= sabotage_cost;
+    }
+    else {
+        is_sabotaged=false;
+        image_index=0;
+        sabo_timer=room_speed*2;
     }
 }
 
@@ -88,6 +95,7 @@ if is_sabotaged{
     }
     if(global.processing&lt;1){
         is_sabotaged = false;
+        image_index=0;
     }
     else if(proc_timer&lt;=0){
         global.processing -=1;
