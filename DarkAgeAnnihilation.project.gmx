@@ -12,6 +12,8 @@
     <sprite>sprites\spr_cursor</sprite>
     <sprites name="Wall Sprites">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_door_lr</sprite>
+      <sprite>sprites\spr_door_ud</sprite>
       <sprite>sprites\spr_wall_lr</sprite>
       <sprite>sprites\spr_wall_ud</sprite>
     </sprites>
@@ -35,6 +37,8 @@
     </objects>
     <object>objects\obj_cursor</object>
     <object>objects\obj_grid_controller</object>
+    <object>objects\obj_door_lr</object>
+    <object>objects\obj_door_ud</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
