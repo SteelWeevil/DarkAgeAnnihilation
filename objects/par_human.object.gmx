@@ -36,6 +36,8 @@ device_is_reached=false;
 path_device=noone;
 my_path = path_add();
 nearest_device=noone;
+energy_timer = room_speed * 10;
+energy_interval = room_speed * 10;
 
 //Create attached need objects
 need_food=instance_create(x,y,par_needs);
@@ -137,29 +139,13 @@ if (focus = "none"){
 
 path_start(my_path,spd,path_action_stop,false);
 
-/*
-else if (!comp_met and !dev_met){
-    path_computer=path_add();
-    if mp_grid_path(grid,path_computer,x,y,obj_computer.x,obj_computer.y,1){
-        path_start(path_computer,spd,path_action_stop,true);
-    }
-}
-else if (!dev_met){
-    path_device=path_add();
-    if mp_grid_path(grid,path_device,x,y,obj_device_food.x,obj_device_food.y,1) {
-        path_start(path_device,spd,path_action_stop,true);
-        draw_path(path_device, x, y, true);
-    }
-}
+//Energy Consumption Rate
+energy_timer -= 1;
 
-if (!comp_met){
-    if place_meeting(x,y,obj_computer){
-        comp_met=true;
-    }
+if energy_timer &lt;= 0 {
+    energy -= 1;
+    energy_timer = energy_interval;
 }
-*/
-
-
 </string>
           </argument>
         </arguments>

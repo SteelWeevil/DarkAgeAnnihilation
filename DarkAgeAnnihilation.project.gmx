@@ -20,6 +20,8 @@
     <sprite>sprites\spr_need</sprite>
     <sprite>sprites\spr_device_food</sprite>
     <sprite>sprites\spr_device_sleep</sprite>
+    <sprite>sprites\spr_proc_border</sprite>
+    <sprite>sprites\spr_energy_border</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -39,8 +41,9 @@
     </objects>
     <object>objects\obj_cursor</object>
     <object>objects\obj_grid_controller</object>
-    <object>objects\obj_door_lr</object>
+    <object>objects\par_door</object>
     <object>objects\obj_door_ud</object>
+    <object>objects\obj_energy_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
